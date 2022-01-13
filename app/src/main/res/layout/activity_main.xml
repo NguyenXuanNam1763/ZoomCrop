@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:gravity="right"
+            android:minHeight="?attr/actionBarSize"
+            app:navigationIcon="?attr/homeAsUpIndicator">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Reset" />
+
+                <Button
+                    android:id="@+id/btn_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Done" />
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/ultra_dark"
+            tools:context=".MainActivity">
+
+            <com.example.zoomexample.PhotoView
+                android:id="@+id/iv_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:visibility="visible" />
+
+            <com.example.zoomexample.CropOverlayView
+                android:id="@+id/crop_overlay"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                app:cornerRadius="0dp"
+                app:guideLines="true"
+                app:marginSide="40dp"
+                app:marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/tv_move_resize_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:text="Move / resize to crop the picture"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
